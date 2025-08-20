@@ -11,6 +11,7 @@ export default defineConfig(({ mode }) => ({
     fs: {
       allow: ["./client", "./shared"],
       deny: [".env", ".env.*", "*.{crt,pem}", "**/.git/**", "server/**"],
+      base: process.env.VITE_BASE_PATH || "/Check-before-go",  
     },
   },
   build: {
@@ -34,6 +35,7 @@ function expressPlugin(): Plugin {
 
       // Add Express app as middleware to Vite dev server
       server.middlewares.use(app);
+
     },
   };
 }
