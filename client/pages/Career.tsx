@@ -31,7 +31,7 @@ export default function Career() {
               <div className="pt-4">
                 <Button>
                   <MessageCircle className="mr-2 h-4 w-4" />
-                  Continue prompting to fill in this page
+                  {/* Continue prompting to fill in this page */}
                 </Button>
               </div>
             </CardContent>
