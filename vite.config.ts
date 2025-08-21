@@ -9,20 +9,20 @@ export default defineConfig(({ mode }) => ({
     host: "::",
     port: 8080,
     fs: {
-      allow: ["./client", "./shared"],
+      allow: ["./client", "./shared","./server", "./dist/spa", "./dist/server", "./dist/shared"],
       deny: [".env", ".env.*", "*.{crt,pem}", "**/.git/**", "server/**"],
       base: process.env.VITE_BASE_PATH || "/Check-before-go",  
     },
   },
   build: {
-    outDir: "dist/spa",
+    outDir: "dist",
   },
   plugins: [react(), expressPlugin()],
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./client"),
       "@shared": path.resolve(__dirname, "./shared"),
-    },
+    },  
   },
 }));
 
