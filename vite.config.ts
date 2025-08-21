@@ -11,11 +11,11 @@ export default defineConfig(({ mode }) => ({
     fs: {
       allow: ["./client", "./shared","./server", "./dist/spa", "./dist/server", "./dist/shared"],
       deny: [".env", ".env.*", "*.{crt,pem}", "**/.git/**", "server/**"],
-      base: process.env.VITE_BASE_PATH || "/Check-before-go",  
+      base: "/repository-or-subpath/",
     },
   },
   build: {
-    outDir: "dist",
+    outDir: "dist/spa",
   },
   plugins: [react(), expressPlugin()],
   resolve: {
